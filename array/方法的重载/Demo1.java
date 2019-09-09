@@ -1,0 +1,31 @@
+class Demo1{
+	
+	public static void main (String args[]){
+		int a = 30;
+		int b = 25;
+		int c = 75;
+		int result = compareNum(a,b,c);
+		System.out.println("the big number is "+result);
+	
+		
+		
+	}
+	
+	public static int compareNum(int a,int b){
+		return a>b?a:b;
+	
+	
+		
+		
+	}
+	
+	public static int compareNum(int a,int b,int c){
+		
+		return compareNum(a,b)>c?compareNum(a,b):c;
+		
+		
+		
+	}
+	
+	
+}
