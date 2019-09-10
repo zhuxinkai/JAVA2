@@ -7,9 +7,9 @@ class Demo{
 
 public static void main (String[] args) {
 	
-	int [] array = {1,2,3,234,1234,4235,4275,44298,44299};
-	 int index = quick(array,44299);
-	 System.out.print("this number 44299  index is "+ index);
+	int [] array = {1,2,3,234,1234,4235,4275,44298,1123789};
+	 int index = quick(array,1123789);
+	 System.out.print("this number 1123789  index is "+ index);
   
    
 
