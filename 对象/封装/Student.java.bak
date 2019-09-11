@@ -1,0 +1,81 @@
+class Student{
+	
+	private String name;
+	private int age;
+	private char gender;
+	
+	public void setName(String a){
+	      name = a;		
+		
+	}
+	
+	
+	public void setAge(int b){
+		age = b;	
+		
+	}
+	
+	public void setGender(char a){
+		
+		gender = a;
+		
+	}
+/*	
+	public void printStuent(){
+		
+		//System.out.println("姓名：   "+name +"  ""年龄:  "+age+"  "+"性别:"+gender);
+		
+		
+		
+	}
+*/
+	
+	
+	
+	public String getName(){
+		return name;
+	}
+	public int getAge(){
+		return age;
+	}
+	public char getGender(){
+		
+		return gender;
+	}
+	
+	
+	
+}
+
+
+
+
+class TestStudent{
+	
+	public static void main (String[] args){
+	Student student = new Student();
+	
+ 	student.setName("zhuxinkai");
+		student.setAge(50);
+		student.setGender('男');
+	//	student.printStudent();
+		
+		
+		String name =  student.getName();
+		int age = student.getAge();
+		char gender = student.getGender();
+		
+	
+		System.out.println("姓名：   "+name);
+		System.out.println( "年龄:  "+age);
+		System.out.println("性别:   "+gender);	
+		
+	}
+	
+		
+	
+	
+	
+}
+// 弄清楚char类型
+// 开放的方法，必须要对象的形式去调用。所以，类必须对象化操作。
