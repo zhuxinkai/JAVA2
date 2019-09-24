@@ -1,0 +1,77 @@
+class Demo2{
+	public static void main (String [] args){
+		Master ma = new Master();
+		ma.feed(new Animals(),new Food());
+		ma.feed(new Dog(),new Bone());
+		ma.feed(new Cat(),new Fish());
+		
+		
+		
+		
+	}
+	
+	
+	
+}
+
+//Animals及其子类
+class Animals{
+	public void eat(Food f){
+		System.out.println("我是一只动物，我正在吃"+f.getFood());
+		
+	}
+	
+}
+
+class Dog extends Animals{
+	public void eat(Food f){
+		System.out.println("我是一只狗，我正在吃"+f.getFood());
+		
+	}
+	
+}
+
+class Cat extends Animals{
+	public void eat(Food f){
+		System.out.println("我是一只猫，我正在吃"+f.getFood());
+		
+	}
+	
+}
+
+
+class Food{
+	
+	public String getFood(){
+		return "食物";
+		
+	}
+}
+
+class Bone extends Food{
+	
+	public String getFood(){
+		return "骨头";
+		
+	}
+}
+
+
+class Fish extends Food{
+	
+	
+	public String getFood(){
+		return "鱼";
+	}
+}
+
+
+class Master{
+	
+	public void feed(Animals an,Food f){
+		an.eat(f);
+		
+		
+	}
+	
+}
