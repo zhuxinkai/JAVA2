@@ -1,12 +1,13 @@
+/*
+单例模式
 class Singleton{
-	private static Singleton s;  //定义数据类型，用类的名字定义。
+	private static Singleton s;
 
 	 private Singleton(){
 	 	
-	 }
+	 } 通过私有化构造器,禁止外部调用构造器。同时提供一个静态方法，调用这个唯一的对象。
 	
 	public static Singleton getInstance(){
- //   public static getInstance(){   方法没有放回数据的类型。
 		if (s == null){
 			s =  new Singleton();
 		}
@@ -37,17 +38,15 @@ class TestSingle{
 	
 	
 }
-/*
 
-
-
-public final class Singleton1 {
-    private static final Singleton1 INSTANCE = new Singleton1();
-    private Singleton1(){}
-    public static Singleton1 getInstance(){
-        return INSTANCE;
-    }
-}
 
 
 */
+
+/*
+*
+*抽象模板
+
+
+*/
+
