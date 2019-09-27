@@ -34,8 +34,10 @@ class TestSingle{
 	
 	
 	}
+o(	{
 
-	
+
+
 	
 }
 
@@ -49,4 +51,60 @@ class TestSingle{
 
 
 */
+
+
+class Demo{
+	public static void main (String [] args){
+		SonInterDo s = new SonInterDo();
+		s.allToDo();
+	}
+	
+}
+
+abstract class InterDo{
+	public void toDo(){
+		
+	}
+	
+	public abstract void onlyKnow();
+		
+	
+	public long everyToDo(){
+		long startTime =System.currentTimeMillis();
+		return startTime;
+	}
+
+public void allToDo(){
+	toDo();
+	onlyKnow();
+	everyToDo();
+} 	
+	
+	
+}
+
+
+class SonInterDo extends InterDo{
+	
+	public void onlyKnow(){}
+	public void toDo(){
+		for(int i = 0;i<100;i++){
+			System.out.println("程序正在执行"+i+"%");
+		}
+		
+	}
+
+
+public void allToDo(){
+	long startTime = everyToDo();
+
+	toDo();
+  long endTime = everyToDo();
+  long resultTime = endTime-startTime;
+ System.out.println("程序执行时间是"+resultTime+"毫秒");	
+	
+}	
+	
+}
+
 
