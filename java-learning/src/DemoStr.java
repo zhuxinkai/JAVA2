@@ -23,6 +23,7 @@ class Demo{
         int num = 0;
 
         for(int i = 0;i< str.length();i++){
+            //利用charAt进行字符串的遍历。
             char c = str.charAt(i);
             if(c >= 'A' && c <= 'Z'){
                 Anum ++;
