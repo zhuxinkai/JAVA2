@@ -16,8 +16,7 @@ public class DemoStr4 {
       //      System.out.println(strarray2[i]);
 
        // }
-        String str3 = "99dfqwe9$55weW5$33SDD35$SDASD55$QWEkkk";
-        String [] strarray3 = str3.split("\\$");
+        String str3 = "99dfqwe9$55weW5$33SDD35$SDASD55$QWEkkk";        String [] strarray3 = str3.split("\\$");
         for (int i = 0;i<strarray3.length;i++){
             System.out.println(strarray3[i]);
 
