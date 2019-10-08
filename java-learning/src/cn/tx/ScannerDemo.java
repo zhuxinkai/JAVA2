@@ -1,3 +1,4 @@
+package cn.tx;
 
 import java.util.Scanner;
 
