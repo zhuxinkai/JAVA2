@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0666d28a-a0a5-441b-9b35-687b3476873a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../StringBuffer/src/RandomDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StringBuffer/src/SystemDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringBuffer/src/StringBufferDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StringBuffer/src/StringBufferDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tx/DemoString6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tx/DemoString6.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +32,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570458516436" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../StringBuffer" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -161,7 +163,8 @@
       <updated>1570443524625</updated>
       <workItem from="1570443527948" duration="7642000" />
       <workItem from="1570462384500" duration="20892000" />
-      <workItem from="1570686798475" duration="4802000" />
+      <workItem from="1570686798475" duration="6212000" />
+      <workItem from="1570798553479" duration="1227000" />
     </task>
     <task id="LOCAL-00001" summary="2019-10-07-Scanner">
       <created>1570495785979</created>
@@ -170,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570495785979</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2019-10-10-homework+add+重构方法，缺少关于输入空字符的判断，今晚补。">
+      <created>1570691763355</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570691763355</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +211,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2019-10-07-Scanner" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019-10-07-Scanner" />
+    <MESSAGE value="2019-10-10-homework+add+重构方法，缺少关于输入空字符的判断，今晚补。" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019-10-10-homework+add+重构方法，缺少关于输入空字符的判断，今晚补。" />
   </component>
 </project>
