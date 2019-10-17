@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0666d28a-a0a5-441b-9b35-687b3476873a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../StringBuffer/src/RandomDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../StringBuffer/src/SystemDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StringBuffer/src/StringBufferDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StringBuffer/src/StringBufferDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StringBuffer/src/ImageDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StringBuffer/src/IntDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -165,6 +164,10 @@
       <workItem from="1570462384500" duration="20892000" />
       <workItem from="1570686798475" duration="6212000" />
       <workItem from="1570798553479" duration="1227000" />
+      <workItem from="1570891393444" duration="65000" />
+      <workItem from="1570891663030" duration="593000" />
+      <workItem from="1570960794797" duration="597000" />
+      <workItem from="1571017094465" duration="1459000" />
     </task>
     <task id="LOCAL-00001" summary="2019-10-07-Scanner">
       <created>1570495785979</created>
