@@ -56,6 +56,31 @@ public class Student {
     }
 
     @Override
+    public int hashCode() {
+        return 1;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Student){
+            if(this.age == ((Student) obj).age &&
+            this.name != null && ((Student) obj).name != null &&
+            this.name.equals(((Student) obj).name)&&
+            this.gender == ((Student) obj).gender &&
+                    this.lfq == ((Student) obj).lfq){
+            return true;
+            }else{
+    return false;
+            }
+
+
+
+
+        }else{return false;
+        }
+    }
+
+    @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
