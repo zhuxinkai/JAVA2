@@ -32,11 +32,13 @@ public class SetDemo {
            IDEA 如何查看方法的父类，父类方法。
 
          */
+
+
        Set<Student> sttd1 = new HashSet<Student>();
-       sttd1.add(new Student("liusha",34,'2',12.3f));
-       sttd1.add(new Student("zhuxinkai",12,'1',15.21f));
-       sttd1.add(new Student("zhuxinkai",12,'1',15.21f));
-        sttd1.add(new Student("zhuxinkai",12,'1',15.23f));
+       sttd1.add(new Student(1,"liusha",34,'2',12.3f));
+       sttd1.add(new Student(2,"zhuxinkai",12,'1',15.21f));
+       sttd1.add(new Student(3,"zhuxinkai",12,'1',15.21f));
+        sttd1.add(new Student(4,"zhuxinkai",12,'1',15.23f));
 
         System.out.println(sttd1);
 
@@ -50,6 +52,18 @@ public class SetDemo {
 
 
         //通过iterator 进行删除，不会出现concureent modify 异常。
+        Iterator<String> it1 = set1.iterator();
+
+        while(it1.hasNext()){
+           String init = it1.next();
+           if (init.equals("武松")){
+               it1.remove();
+
+            }
+           System.out.println(init);
+
+
+        }
 
 
 

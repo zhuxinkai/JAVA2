@@ -22,7 +22,7 @@ public class CollectionDemo4 {
 
       //指定集合中只能添加学生类的对象
         List<Student> ls = new ArrayList<Student>();
-        ls.add(new Student("zhuxinkai",12,'1',13f));
+        ls.add(new Student(1,"zhuxinkai",12,'1',13f));
         System.out.println(ls);
 
 
@@ -31,7 +31,7 @@ public class CollectionDemo4 {
         //指定集合中添加学生类的子类。
 
         List<ChildStudent> ls2 = new ArrayList<ChildStudent>();
-        ls2.add(new ChildStudent("liusha",23,'2',14f));
+        ls2.add(new ChildStudent(2,"liusha",23,'2',14f));
         System.out.println(ls2);
 
         ls.addAll(ls2);

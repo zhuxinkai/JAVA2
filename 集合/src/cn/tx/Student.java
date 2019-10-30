@@ -1,8 +1,10 @@
 package cn.tx;
-
-public class Student {
+    //对Student 类变成Comparable 接口的实现类时，需要加泛型，不然在实现compareTo方法时，如果
+    //直接使用Student 对象的话。将无法识别
+public class Student implements Comparable<Student> {
     //私有化的属性，应该定影在主方法的外面。
     //其余的get ,set , toString ,构造器的Generate都可以生成。
+    private  Integer idnumber;
     private String name;
     private Integer age;
     private char gender;
@@ -45,15 +47,29 @@ public class Student {
         this.lfq = lfq;
     }
 
-
-
-    public Student(String name, Integer age, char gender, float lfq) {
+    public Student(Integer idnumber, String name, Integer age, char gender, float lfq) {
+        this.idnumber = idnumber;
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.lfq = lfq;
-
     }
+
+
+
+    @Override
+    public int compareTo(Student o) {
+        int val = this.idnumber - o.idnumber;
+        if(val == 0){
+            val = this.name.compareTo(o.name);
+            if(val == 0){
+                val = this.age - o.age;
+
+            }
+
+
+        }
+     return val;}
 
     @Override
     public int hashCode() {
@@ -67,7 +83,7 @@ public class Student {
             this.name != null && ((Student) obj).name != null &&
             this.name.equals(((Student) obj).name)&&
             this.gender == ((Student) obj).gender &&
-                    this.lfq == ((Student) obj).lfq){
+                    this.lfq == ((Student) obj).lfq && this.idnumber == ((Student) obj).idnumber) {
             return true;
             }else{
     return false;
@@ -83,7 +99,8 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
+                "idnumber=" + idnumber +
+                ", name='" + name + '\'' +
                 ", age=" + age +
                 ", gender=" + gender +
                 ", lfq=" + lfq +
@@ -94,7 +111,7 @@ public class Student {
 class ChildStudent extends Student{
 
 
-    public ChildStudent(String name, Integer age, char gender, float lfq) {
-        super(name, age, gender, lfq);
+    public ChildStudent(Integer idnumber, String name, Integer age, char gender, float lfq) {
+        super(idnumber, name, age, gender, lfq);
     }
 }

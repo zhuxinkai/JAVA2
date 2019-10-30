@@ -34,7 +34,7 @@ public class StrongForDemo {
     for(遍历的数据类型，（类似于泛型），遍历中所使用的变量名 ： 遍历对象）
 
      */
-    Student studentzengzeng = new Student("zxk",37,'1',13f);
+    Student studentzengzeng = new Student(123,"zxk",37,'1',13f);
         Collection <Student> sc2 = new ArrayList <Student>() ;
         sc2.add(studentzengzeng);
 
