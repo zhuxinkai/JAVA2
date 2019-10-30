@@ -13,7 +13,7 @@ System.out.println(countNumber(arr));
 
 System.out.println(countNumber(1,2,3,4,5,6,7,8));
 //可变参数完全可以当作一个数组来使用,或者说,本质上可变参数就是一个数组.所以,数组所拥有的方法,属性,可变参数一样拥有.
-        
+
 
     }
 public static int countNumber(int... arr ){
