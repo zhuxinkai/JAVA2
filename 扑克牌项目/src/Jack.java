@@ -1,6 +1,6 @@
 public class Jack {
     private String color;
-    private Integer no;
+    private String no;
 
     public static void main (String [] args){
 
@@ -8,7 +8,7 @@ public class Jack {
 
     }
 
-    public Jack(String color, Integer no) {
+    public Jack(String color, String no) {
         this.color = color;
         this.no = no;
     }
@@ -25,7 +25,7 @@ public class Jack {
         return color;
     }
 
-    public Integer getNo() {
+    public String getNo() {
         return no;
     }
 
@@ -33,7 +33,7 @@ public class Jack {
         this.color = color;
     }
 
-    public void setNo(Integer no) {
+    public void setNo(String no) {
         this.no = no;
     }
 
