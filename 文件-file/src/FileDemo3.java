@@ -32,6 +32,12 @@ public class FileDemo3 {
 */
 
     }
+
+    /*
+
+    递归的两大原则，1，在程序中调用其自身。
+
+     */
     public static void printDirectory(File [] ff){
         for (File ffadb : ff) {
 
