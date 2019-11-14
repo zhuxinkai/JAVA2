@@ -25,7 +25,7 @@ public class TreadDemo3 implements Runnable {
 
                     }
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(1);
                         System.out.println(Thread.currentThread().getName() + ticket-- + "张票");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
