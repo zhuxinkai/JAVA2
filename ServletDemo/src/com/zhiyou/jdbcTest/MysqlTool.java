@@ -53,7 +53,11 @@ public class MysqlTool {
         try {
             //创建sql载体
             ps=conn.prepareStatement(sql);
-            //给占位符赋值
+
+            /*利用for 循环，对相应的预处理语句中的值进行赋值。 记住相应的for 循环时从0开始，匹配长度
+            但是，参数的起始索引是1，所以必须在i+1 进行处理。
+             */
+
             for(int i=0;i<objects.length;i++){
                 ps.setObject(i+1, objects[i]);
             }
