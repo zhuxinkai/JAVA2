@@ -3,12 +3,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class TestServlet extends HttpServlet {   //通过继承HttpServlet 类被声明为一个Servlet对象。
     @Override
     //处理HTTP Get 请求
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        resp.setContentType("text/html");
+        resp.setCharacterEncoding("utf-8");
+        PrintWriter out = resp.getWriter();
+        out.println("<HTML>");
+        out.println("<HEAD><TITLE>Servlet实例</TITLE></HEAD>");
+        out.println("   <BODY>");
+        out.println("    Server 实例：    ");
+        out.println(this.getClass());
+        out.println("   </BODY>");
+        out.println("</HTML>");
+        out.flush();
+        out.close();
     }
 
     @Override
