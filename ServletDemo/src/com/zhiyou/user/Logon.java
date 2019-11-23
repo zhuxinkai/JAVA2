@@ -29,6 +29,7 @@ public class Logon extends HttpServlet {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
 
+
         if(username==null||password==null){
             //重新登录
             System.out.println("账号或密码错误！");

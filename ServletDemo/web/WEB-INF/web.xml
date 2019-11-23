@@ -14,4 +14,24 @@
     </servlet-mapping>
 
 
+    <filter>
+        <filter-name>CountFilter</filter-name>
+        <filter-class>com.filter.MyFilter</filter-class>
+        <init-param>
+            <param-name>count</param-name>
+            <param-value>500</param-value>
+        </init-param>
+
+
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CountFilter</filter-name>
+        <!--注册的路径失败导致报错，少了根路径，导致无法找到。-->
+        <url-pattern>/index.jsp</url-pattern>
+
+    </filter-mapping>
+
+
+
 </web-app>

@@ -11,6 +11,14 @@
     <title>Title</title>
 </head>
 <body>
-fuck you!
+<h2>
+    欢迎光临 <br>
+    您是本站的第【<%=application.getAttribute("count")%> 】位访客！
+
+
+
+</h2>
+
+
 </body>
 </html>
