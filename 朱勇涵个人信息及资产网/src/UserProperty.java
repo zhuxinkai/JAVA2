@@ -34,21 +34,25 @@ public class UserProperty extends HttpServlet {
         Object[] objs1={password};
         ResultSet rs = to.query(sql1,objs1);
         try {
-            if(rs.next()){
-                rs = to.query(sql1,objs1);
-                while (rs.next()){
+            if(rs.next()) {
+                rs = to.query(sql1, objs1);
+                while (rs.next()) {
 
                     Date date = rs.getDate("date");
                     String reason = rs.getString("reduce-reason");
                     Double addmoney = rs.getDouble("addmoney");
                     PrintWriter out = resp.getWriter();
-                    System.out.print("<h1>"+"朱勇涵小朋友你在: "+date+"因为"+reason +"获得该金额");
-                    out.println("<h1>"+"朱勇涵小朋友你在-- "+date+reason +"获得该金额人民币 "+addmoney);
+                    if (addmoney > 0) {
+                        System.out.print("<h1>" + "朱勇涵小朋友你在: " + date + "因为" + reason + "获得该金额");
+                        out.println("<h2>" + "朱勇涵小朋友你在-- " + date + reason + "获得该金额人民币 " + addmoney);
+
+                    } else {
+                        System.out.print("<h1>" + "朱勇涵小朋友你在: " + date + "因为" + reason + "获得该金额");
+                        out.println("<h2>" + "朱勇涵小朋友你在-- " + date + "因为" + reason + "减除该金额人民币 " + addmoney);
+                    }
 
                 }
-
-            }
-            else{
+            }else{
                 PrintWriter out2 = resp.getWriter();
                 out2.println("<h1>"+"账号密码错误");
                 //Thread.sleep(1000);
