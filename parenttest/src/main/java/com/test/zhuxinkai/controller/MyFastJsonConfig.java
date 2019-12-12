@@ -7,9 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.nio.charset.Charset;
-@Configuration
+//@Configuration
+
 public class MyFastJsonConfig {
-    @Bean
+ //   @Bean
     FastJsonHttpMessageConverter fastJsonHttpMessageConverter(){
         FastJsonHttpMessageConverter converter = new FastJsonHttpMessageConverter();
         FastJsonConfig config = new FastJsonConfig();
@@ -28,3 +29,4 @@ public class MyFastJsonConfig {
 
     }
 }
+
