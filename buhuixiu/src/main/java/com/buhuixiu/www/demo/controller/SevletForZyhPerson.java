@@ -1,4 +1,9 @@
-import com.zhuyonghan.jdbc.MysqlTool;
+package com.buhuixiu.www.demo.controller;
+
+import com.buhuixiu.www.demo.dao.MysqlTool;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,17 +15,19 @@ import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.zhuyonghan.jdbc.MysqlTool;
 
 
-@WebServlet("/login")
+
+@RestController
+
+//@WebServlet("/login")
 public class SevletForZyhPerson extends HttpServlet {
-
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
     }
-
+    @RequestMapping(value = "/login")
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
@@ -29,6 +36,8 @@ public class SevletForZyhPerson extends HttpServlet {
 
         String username = req.getParameter("username");
         String password = req.getParameter("pwd");
+        System.out.println(username);
+        System.out.println(password);
  /*
         if(username.equals("zhuyonghan")){
             resp.getWriter().print("ok");

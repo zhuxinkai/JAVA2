@@ -9,19 +9,26 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src" />
+        </sourceRoots>
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/out/production/朱勇涵个人信息及资产网" />
+    <output-test url="file://$MODULE_DIR$/out/test/朱勇涵个人信息及资产网" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.41" level="application_server_libraries" />
-    <orderEntry type="library" name="jquery-1.12.4" level="application" />
-    <orderEntry type="library" name="jquery" level="application" />
-    <orderEntry type="library" name="mysql-connector-java-8.0.16" level="application" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 8.5.41" level="application_server_libraries" />
+    <orderEntry type="library" exported="" name="jquery-1.12.4" level="application" />
+    <orderEntry type="library" exported="" name="jquery" level="application" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.16" level="application" />
   </component>
 </module>

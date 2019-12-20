@@ -1,4 +1,12 @@
-import com.zhuyonghan.jdbc.MysqlTool;
+package com.buhuixiu.www.demo.controller;
+
+import com.buhuixiu.www.demo.dao.MysqlTool;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,19 +17,20 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-@WebServlet("/money")
+@RestController
+@WebServlet ("/money")
 public class Money extends HttpServlet {
 
 
 
 
 
-
+         @RequestMapping(value = "/money",method = RequestMethod.GET)
         @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             doPost(req,resp);
         }
-
+         @RequestMapping(value = "/money")
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
