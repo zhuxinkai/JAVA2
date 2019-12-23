@@ -22,12 +22,12 @@ import java.sql.SQLException;
 
 //@WebServlet("/login")
 public class SevletForZyhPerson extends HttpServlet {
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    @RequestMapping(value = "/login1",method = RequestMethod.GET)
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
     }
-    @RequestMapping(value = "/login")
+    @RequestMapping(value = "/login1")
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");

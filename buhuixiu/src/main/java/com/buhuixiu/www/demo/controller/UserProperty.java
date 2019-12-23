@@ -48,11 +48,11 @@ public class UserProperty extends HttpServlet {
                     Double addmoney = rs.getDouble("addmoney");
                     PrintWriter out = resp.getWriter();
                     if (addmoney > 0) {
-                        System.out.print("<h1>" + "朱勇涵小朋友你在: " + date + "因为" + reason + "获得该金额");
+
                         out.println("<h2>" + "朱勇涵小朋友你在-- " + date + reason + "获得该金额人民币 " + addmoney);
 
                     } else {
-                        System.out.print("<h1>" + "朱勇涵小朋友你在: " + date + "因为" + reason + "获得该金额");
+
                         out.println("<h2>" + "朱勇涵小朋友你在-- " + date + "因为" + reason + "减除该金额人民币 " + addmoney);
                     }
 
