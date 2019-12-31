@@ -1,5 +1,6 @@
 package com.buhuixiu.www.demo.controller;
 
+import com.buhuixiu.www.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +10,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,12 +28,15 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true,securedEnabled = true)
 public class MultiHttpSecurityConfig{
+    @Autowired
+    UserService userService;
     @Bean
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
     @Autowired
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        /*
         auth.inMemoryAuthentication()
                 .withUser("root")
                 .password("$2a$10$RMuFXGQ5AtH4wOvkUqyvuecpqUSeoxZYqilXzbz50dceRsga.WYiq")
@@ -44,6 +49,11 @@ public class MultiHttpSecurityConfig{
                 .withUser("sang")
                 .password("$2a$10$eUHbAOMq4bpxTvOVz33LIehLe3fu6NwqC9tdOcxJXEhyZ4simqXTC")
                 .roles("USER");
+
+         */
+
+
+        auth.userDetailsService(userService);
     }
 
     @Configuration
@@ -57,6 +67,7 @@ public class MultiHttpSecurityConfig{
                     .anyRequest().hasRole("ADMIN");
         }
     }
+
 
 
 
@@ -79,6 +90,9 @@ public class MultiHttpSecurityConfig{
         protected void configure(HttpSecurity http) throws Exception {
 
             http.authorizeRequests().antMatchers("/login","/VlidUser").permitAll()
+                    .antMatchers("/admin/**").hasRole("admin")
+                    .antMatchers("/db/**").hasRole("dba")
+                    .antMatchers("/user/**").hasRole("user")
                     .anyRequest().authenticated()
                     .and()
                     .formLogin().loginPage("/login")
