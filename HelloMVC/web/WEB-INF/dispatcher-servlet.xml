@@ -8,17 +8,30 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     <!--对应src下的报名，需要自己新建-->
-    <bean name="/hello.form" class="com.spring.mvc.HelloMVCController" />
+    <bean id="helloMVCController" name="/hello.form" class="com.spring.mvc.HelloMVCController" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
             <!-- 这个配置是配置JSP页面的位置，按照你自己的配置来配 -->
-            <value>/</value>
+            <value>/WEB-INF/</value>
         </property>
         <property name="suffix">
             <value>.jsp</value>
         </property>
 
     </bean>
+<!-- 相当于默认构造器，如果存在SimpleUrlHandlerMapping 那么，如果需要在bean中使用name 来定义 HandlerMapping
+则需要，显示的定义 BeanNameUrlHandlerMapping
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
+-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/hello1.form">helloMVCController</prop>
+                <prop key="/hello2.form">helloMVCController</prop>
+            </props>
+        </property>
+    </bean>
+
 
 </beans>
