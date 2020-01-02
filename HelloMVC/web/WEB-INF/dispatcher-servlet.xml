@@ -7,9 +7,19 @@
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-    <!--对应src下的报名，需要自己新建-->
-    <bean id="helloMVCController" name="/hello.form" class="com.spring.mvc.HelloMVCController" />
-    <!--配置URL解析器-->
+
+    <!--<mvc:annotation-driven/>-->
+    <!--扫描器存在就不需要使用疏解驱动
+     @Controller
+    @Service
+    @repository
+    @Component
+    @Autowired-->
+
+    <context:component-scan base-package="com.spring.mvc"></context:component-scan>
+
+
+    <!--视图解析器的配置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
             <!-- 这个配置是配置JSP页面的位置，按照你自己的配置来配 -->
@@ -20,30 +30,8 @@
         </property>
 
     </bean>
-<!-- 相当于默认构造器，如果存在SimpleUrlHandlerMapping 那么，如果需要在bean中使用name 来定义 HandlerMapping
-则需要，显示的定义 BeanNameUrlHandlerMapping
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
--->
-    <!--默认映射器.需要对其进行依赖，否则需要在SimpleUrlHandlerMapping 中，进行映射。。
-    如果有默认的自动映射器  BeanNameUrlHandlerMapping 则不需要进行映射处理-->
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
-    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <property name="mappings">
-            <props>
-                <prop key="/hello1.form">helloMVCController</prop>
-                <prop key="/hello2.form">helloMVCController</prop>
-            </props>
-        </property>
-    </bean>
 
 
 
-    <bean name="/to.form" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
-        <property name="viewName" value="index"></property>
-    </bean>
-
-    <bean name="/to1.form" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
-        <property name="viewName" value="jps1/index"></property>
-    </bean>
 
 </beans>
