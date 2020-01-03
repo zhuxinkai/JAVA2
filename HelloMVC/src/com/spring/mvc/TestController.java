@@ -1,16 +1,18 @@
 package com.spring.mvc;
 
 import com.spring.model.Person;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 
 /**
  * <h3>HelloMVC</h3>
@@ -24,6 +26,12 @@ import java.util.Date;
     @Controller
 @RequestMapping("/test")  //放在类上，用于相同方法名的不同类的方法映射。
 public class TestController {
+        public TestController(){
+            System.out.println("controller 被创建");
+        }
+
+
+
     @RequestMapping("/hello.form")
         public String hello(){
         return "index";
@@ -87,7 +95,27 @@ public class TestController {
 
     }
 
+    //spring bean 中默认都是单例的
 
+//最为常用的方式是，Model ,利用model.addAttribute 方法，来设置视图集。
+//@RequestMapping(value = "/returnResult.form",method = RequestMethod.POST)
+@RequestMapping(value = "/returnResult.form",method = RequestMethod.GET)
+   // public String returnResult(Map<String ,Person> map){
+        public String returnResult(Model model){
+
+            Person person = new Person();
+            person.setAge(17);
+            person.setAddress("beijing");
+            person.setGender(1);
+            person.setId(2);
+            person.setName("朱鑫凯");
+          //  Map<String ,Person> map = new HashMap<String, Person>();
+           // map.put("person",person);
+            model.addAttribute("person",person);
+           // return new ModelAndView("returnResult",map);
+          return ("returnResult");
+
+    }
 
 
 
