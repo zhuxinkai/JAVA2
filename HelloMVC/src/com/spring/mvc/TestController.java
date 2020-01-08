@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Map;
 
 /**
  * <h3>HelloMVC</h3>
@@ -139,8 +138,15 @@ public class TestController {
     public void ajaxback1(String name, PrintWriter out){
         String result = "fuck: " + name;
         out.write(result);
+
+
     }
 
+    @RequestMapping("/redirect.form")
+        public String redirect(){
+           // return "redirect:ajax.form";
+           return "redirect:/test1/redirect.form";
+    }
 
 
 }
