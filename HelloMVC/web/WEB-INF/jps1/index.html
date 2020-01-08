@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/javascirpt/CryptoJS.js"></script>
+    <script>
+        var password ="123456";
+        console.log("passowrd:" + password);
+        var hash = CryptoJS.SHA256(""+"abc"+password);
+        var base64String = CryptoJS.enc.Base64.stringify(hash);
+        console.log(base64String);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

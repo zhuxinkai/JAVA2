@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
@@ -115,6 +118,27 @@ public class TestController {
            // return new ModelAndView("returnResult",map);
           return ("returnResult");
 
+    }
+
+    @RequestMapping("/ajax.form")
+    public String ajax(){
+        return "ajax";
+    }
+
+    @RequestMapping("/ajaxback.form")
+    public void ajaxback(String name, HttpServletResponse response){  //这方式的优势是可以进行编码。
+      String result = "hello" + name;
+        try {
+            response.getWriter().write(result);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping("/ajaxback1.form")  //这种方式的优势是，简便，直接。
+    public void ajaxback1(String name, PrintWriter out){
+        String result = "fuck: " + name;
+        out.write(result);
     }
 
 
