@@ -15,7 +15,12 @@
 <h3>${person.name}</h3><br>
 <h3>${person.address}</h3><br>
 <h3>${person.gender}</h3><br>
-
+<h3>${test}</h3>
+<!--从拦截器中进行追加的数据。
+Map<String,Object> map = modelAndView.getModel();
+        map.put("test","appending something.....");
+        -->
+<h3>${1/0}</h3>
 
 
 </body>
