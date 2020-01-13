@@ -31,7 +31,14 @@
 
     </bean>
 
+    <!--复杂类型表表单德视图解析器
+    id: 必须使用multipartResolver
+    -->
 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--以字节为单位-->
+        <property name="maxUploadSize" value="1024124"></property>
+    </bean>
 
 
 </beans>
