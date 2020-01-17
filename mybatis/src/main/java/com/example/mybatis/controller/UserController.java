@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/users")
 public class UserController {
     @Autowired
-    private UsersService usersService;
+    private UsersService usersService;  //引入服务类接口。
     @RequestMapping("/register")
     public String register(){
         return "register";
