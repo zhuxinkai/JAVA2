@@ -10,6 +10,14 @@
 
 
     </insert>
+
+    <select id="selectAllPerson" resultType="Person">
+
+        select name,password,age,address from persons;
+
+    </select>
+
+
 </mapper>
 
 
