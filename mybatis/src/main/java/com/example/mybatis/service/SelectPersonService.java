@@ -8,6 +8,7 @@ public interface SelectPersonService {
 
     Person selectPersonByName(String name);
     void updatePersonByName(Person persons);
+    void deletePersonByName(String name);
 }
 
 

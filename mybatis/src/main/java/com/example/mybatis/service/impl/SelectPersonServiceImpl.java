@@ -35,4 +35,11 @@ public class SelectPersonServiceImpl implements SelectPersonService {
         this.selectPerson.UpdatePerson(persons);
     }
 
+    @Override
+    public void deletePersonByName(String name){
+       this.selectPerson.DeletePerson(name);
+
+
+    }
+
 }

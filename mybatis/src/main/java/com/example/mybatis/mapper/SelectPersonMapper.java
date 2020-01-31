@@ -8,5 +8,6 @@ import java.util.List;
 public interface SelectPersonMapper {
     Person SelectPerson(String name);
     void UpdatePerson(Person persons);
+    void DeletePerson(String name);
 
 }

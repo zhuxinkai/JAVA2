@@ -53,6 +53,9 @@ public class UserController {
     @RequestMapping("/selectPerson")
     public String selectPerson(String name, Model model) {
         Person person = this.selectPersonService.selectPersonByName(name);
+        if(person == null){
+            return "nouser";
+        }
         model.addAttribute("personback", person);
         return "selectperson";
 
@@ -71,5 +74,19 @@ public class UserController {
           this.selectPersonService.updatePersonByName(persons);
                   return "successupdate";
 
+    }
+
+    @RequestMapping("/deletePerson")
+    public String deletePersonByname(String name){
+
+        this.selectPersonService.deletePersonByName(name);
+        return "successdelete";
+    }
+
+
+    @RequestMapping("/delete")
+    public String frontdelete(){
+
+        return "delete";
     }
 }

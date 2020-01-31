@@ -16,5 +16,16 @@
   update persons set password=#{password},age=#{age},address=#{address} where name=#{name}
 
 </insert>
+
+
+
+    <delete id="DeletePerson" parameterType="Person">
+
+        delete from persons where name =#{value };
+
+    </delete>
+
+
+
 </mapper>
 
