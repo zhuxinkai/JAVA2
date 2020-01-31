@@ -1,7 +1,7 @@
 package com.example.mybatis.controller;
-
 import com.example.mybatis.model.Person;
 import com.example.mybatis.service.SelectAllPersonService;
+import com.example.mybatis.service.SelectPersonService;
 import com.example.mybatis.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,16 +25,18 @@ public class UserController {
     private UsersService usersService;  //引入服务类接口。
     @Autowired
     private SelectAllPersonService selectAllPersonService;
-
+    @Autowired
+    private SelectPersonService selectPersonService;
 
 
     @RequestMapping("/register")
-    public String register(){
+    public String register() {
         return "register";
 
     }
+
     @RequestMapping("/registerhtml")
-  public String registerhtml(Person persons){
+    public String registerhtml(Person persons) {
 
         this.usersService.addPerson(persons);
         return "success";
@@ -42,13 +44,32 @@ public class UserController {
     }
 
     @RequestMapping("/findAllPersons")
-    public String findAllPersons(Model model){
+    public String findAllPersons(Model model) {
         List<Person> list = this.selectAllPersonService.findAllPerson();
-         model.addAttribute("list",list);
+        model.addAttribute("list", list);
         return "findall";
     }
 
+    @RequestMapping("/selectPerson")
+    public String selectPerson(String name, Model model) {
+        Person person = this.selectPersonService.selectPersonByName(name);
+        model.addAttribute("personback", person);
+        return "selectperson";
 
 
+    }
 
+    @RequestMapping("/selectpersonfront")
+    public String selectpersonfront() {
+        return "selectpersonfront";
+    }
+
+
+    @RequestMapping("/editPerson")
+    public String updatePersonByname(Person persons) {
+
+          this.selectPersonService.updatePersonByName(persons);
+                  return "successupdate";
+
+    }
 }
