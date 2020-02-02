@@ -6,8 +6,12 @@ import com.example.mybatis.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -30,13 +34,20 @@ public class UserController {
 
 
     @RequestMapping("/register")
-    public String register() {
+    public String register(@ModelAttribute("aa") Person persons,Model model) {
+
         return "register";
 
     }
 
     @RequestMapping("/registerhtml")
-    public String registerhtml(Person persons) {
+
+    //在控制层添加数据校验
+
+    public String registerhtml(@ModelAttribute("aa") @Valid Person persons, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()){
+          return "register";
+        }
 
         this.usersService.addPerson(persons);
         return "success";
