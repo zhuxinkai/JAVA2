@@ -58,7 +58,7 @@ public class Person {
     @NotBlank(message = "地址不能为空")
     private String address;
     @Length(min = 8,max = 16,message = "密码长度必须为8-16位")
-    @Pattern(regexp = "^(?![a-zA-z]+$)(?!\\d+$)(?![!@#$%^&*]+$)[a-zA-Z\\d!@#$%^&*]+$",message = "密码必须符合复杂性要求")
+    @Pattern(regexp = "^(?![a-zA-z]+$)(?!\\d+$)(?![!@#$%^&*.]+$)[a-zA-Z\\d!@#$%^&*]+$",message = "密码必须符合复杂性要求")
     private String password;
 
     @Override

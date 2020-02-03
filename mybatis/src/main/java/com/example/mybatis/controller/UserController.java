@@ -56,6 +56,13 @@ public class UserController {
 
     @RequestMapping("/findAllPersons")
     public String findAllPersons(Model model) {
+        /*
+        模拟空指针
+        String ss = null;
+        ss.length();
+       */
+        String ss = null;
+        ss.length();
         List<Person> list = this.selectAllPersonService.findAllPerson();
         model.addAttribute("list", list);
         return "findall";
