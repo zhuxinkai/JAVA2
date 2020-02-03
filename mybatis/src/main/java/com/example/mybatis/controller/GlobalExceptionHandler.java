@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author : zhuxinkai
  * @date : 2020-02-03 11:56
  **/
+/*
 @ControllerAdvice
 
 public class GlobalExceptionHandler {
@@ -21,8 +22,9 @@ public class GlobalExceptionHandler {
     public static final String DEFAULT_ERROR_VIEW="error";
 
 
+//适用@ExceptionHandler注解处理局部异常
 
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = {NullPointerException.class})
 
     public ModelAndView defaultErrorHandler(HttpServletRequest request, Exception e) {
 
@@ -35,4 +37,23 @@ public class GlobalExceptionHandler {
         return modelAndView;
 
     }
+/*
+
+    @ExceptionHandler(value = {ArithmeticException.class})
+
+    public ModelAndView defaultErrorHandler2(HttpServletRequest request, Exception e) {
+
+        ModelAndView modelAndView = new ModelAndView(DEFAULT_ERROR_VIEW);
+
+        modelAndView.addObject("exceptionObject",e);
+
+        modelAndView.addObject("url",request.getRequestURL());
+
+        return modelAndView;
+
+    }
+
+
 }
+
+ */

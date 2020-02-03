@@ -70,6 +70,8 @@ public class UserController {
 
     @RequestMapping("/selectPerson")
     public String selectPerson(String name, Model model) {
+        int i = 1;
+        int j = i/0;
         Person person = this.selectPersonService.selectPersonByName(name);
         if(person == null){
             return "nouser";
