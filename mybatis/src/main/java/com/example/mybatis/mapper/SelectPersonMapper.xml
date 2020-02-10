@@ -21,7 +21,7 @@
 
     <delete id="DeletePerson" parameterType="Person">
 
-        delete from persons where name =#{value };
+        delete from persons where name =#{name };
 
     </delete>
 
