@@ -61,8 +61,7 @@ public class UserController {
         String ss = null;
         ss.length();
        */
-        String ss = null;
-        ss.length();
+
         List<Person> list = this.selectAllPersonService.findAllPerson();
         model.addAttribute("list", list);
         return "findall";
